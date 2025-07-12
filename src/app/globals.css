@@ -1,0 +1,53 @@
+@import "tailwindcss";
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  /* Hide content briefly during initial load to prevent flash */
+  body {
+    opacity: 0;
+    transition: opacity 0.1s ease-in-out;
+  }
+
+  body.loaded {
+    opacity: 1;
+  }
+
+
+  body {
+    background-color: #1f2937;
+    color: #ffffff;
+  }
+}
+
+@layer components {
+  .glass-effect {
+    background-color: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+  }
+
+  .btn-primary {
+    background: linear-gradient(135deg, #dc2626 0%, #b91c1c 100%);
+    box-shadow: 0 4px 15px rgba(220, 38, 38, 0.3);
+  }
+
+  .btn-primary:hover {
+    background: linear-gradient(135deg, #b91c1c 0%, #991b1b 100%);
+    box-shadow: 0 6px 20px rgba(220, 38, 38, 0.4);
+  }
+
+  .text-accent {
+    color: #dc2626;
+  }
+
+  .bg-accent {
+    background-color: #dc2626;
+  }
+}
